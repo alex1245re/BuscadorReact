@@ -6,7 +6,6 @@ const img_error = "https://as1.ftcdn.net/jpg/00/83/39/90/1000_F_83399029_La8C5CP
 
 function Pelicula({titulo,year}){
     const [datos, setDatos] = useState([]);
-    const [peliculaSeleccionada,setPeliculaSeleccionada] = useState(null);
     const [detalle, setDetalle] = useState(null);
     const [pagina,setPagina] = useState(1);
 
