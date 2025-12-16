@@ -7,9 +7,6 @@
 
 > **Tu buscador de películas favorito.** Encuentra, explora y descubre detalles de millones de películas y series en segundos.
 
-![Screenshot del Proyecto](https://via.placeholder.com/800x400?text=Aqui+pon+una+captura+de+tu+proyecto)
-*(Reemplaza esta imagen con una captura real de tu aplicación)*
-
 ## ✨ Características Principales
 
 Este proyecto no es solo un buscador, cuenta con funcionalidades avanzadas de UX/UI:
