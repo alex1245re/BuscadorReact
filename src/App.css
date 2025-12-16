@@ -1,0 +1,333 @@
+/* =========================================
+    VARIABLES Y GLOBALES
+   ========================================= */
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    --rojo: #e43f0d;
+    --transition: 0.3s ease;
+    --bg-input: #2a2a2a;
+}
+
+body {
+    background-image: linear-gradient(60deg, #000000 0%, #30353b 100%);
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    padding-top: 20px; 
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    }
+
+/* =========================================
+    LANDING PAGE (Lo que faltaba)
+   ========================================= */
+.landing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 20px;
+}
+
+.valor ul {
+    list-style-type: none;
+}
+
+.landing span{
+    color: var(--rojo);
+}
+
+.hero-text h1 {
+font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, #ffffff, #999999);
+
+    /* 2. Compatibilidad para Webkit (Chrome, Safari, Edge) */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* 3. Estándar oficial (Firefox y futuros) */
+    background-clip: text;
+
+    /* 4. Fallback: Hacemos el texto transparente para que se vea el fondo */
+    color: transparent;
+}
+
+.hero-text h2 {
+    font-size: 1.2rem;
+    color: var(--rojo);
+    margin-bottom: 40px;
+}
+
+/* Botón gigante de entrar */
+.landing button {
+    font-size: 1.5rem;
+    padding: 15px 50px;
+    border-radius: 50px;
+    background-color: var(--rojo);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(228, 63, 13, 0.4);
+    transition: var(--transition);
+}
+.landing button:hover {
+    transform: scale(1.05);
+    background-color: #ff552e; 
+    box-shadow: 0 0 30px rgba(228, 63, 13, 0.8);
+}
+
+
+
+/* =========================================
+    INPUTS Y BARRAS DE BÚSQUEDA
+   ========================================= */
+.inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.inputs input {
+    background-color: var(--bg-input);
+    border: 1px solid #444;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    width: 250px;
+    transition: var(--transition);
+}
+
+.inputs input:focus {
+    border-color: var(--rojo);
+    box-shadow: 0 0 10px rgba(228, 63, 13, 0.2);
+}
+
+/* =========================================
+    GRID DE PELÍCULAS 
+   ========================================= */
+.contenedor {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Esto organiza las pelis en cuadrícula */
+.pelicula {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Estilo para cada tarjeta individual */
+.tarjeta-pelicula {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: var(--transition);
+}
+
+/* Textos debajo de la foto */
+.tarjeta-pelicula h2 {
+    font-size: 1rem;
+    margin: 10px 0 5px 0;
+    color: #eee;
+    text-overflow: ellipsis; /* Si es muy largo pone ... */
+}
+
+.tarjeta-pelicula h3 {
+    font-size: 0.9rem;
+    color: var(--rojo);
+    margin: 0;
+}
+
+/* TU CÓDIGO DE IMÁGENES */
+img{
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: var(--transition);
+    aspect-ratio: 2 / 3;
+    width: 100%; /* Asegura que ocupe su celda del grid */
+    object-fit: cover;
+}
+
+img:hover{
+    transform: scale(1.05); 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+    z-index: 10;
+}
+
+/* Botón Ver Más (Cargar siguiente página) */
+.btn-ver-mas {
+    background-color: transparent;
+    border: 2px solid var(--rojo);
+    color: white;
+    padding: 12px 40px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.btn-ver-mas:hover {
+    background-color: var(--rojo);
+    box-shadow: 0 0 20px rgba(228, 63, 13, 0.5);
+    transform: translateY(-3px);
+}
+
+/* =========================================
+    MODAL 
+   ========================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo casi negro para resaltar la ficha */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+    padding: 20px;
+}
+
+.modal-contenido {
+    background-color: #1a1a1a;
+    border-radius: 15px; /* Bordes redondeados */
+    width: 100%;
+    max-width: 800px;
+    height: 450px; /* Altura fija para mantener el diseño tipo tarjeta */
+    display: flex;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+    overflow: hidden; /* IMPORTANTE: Para que la imagen respete el borde redondeado */
+    animation: zoomIn 0.3s ease;
+    position: relative;
+}
+
+/* --- LADO IZQUIERDO: La Imagen --- */
+.modal-izquierda {
+    width: 40%; /* Ocupa un poco menos de la mitad */
+    background-color: #000;
+    position: relative;
+}
+
+.modal-izquierda img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen llene todo el espacio sin deformarse */
+    display: block;
+    opacity: 0.9;
+}
+
+/* --- LADO DERECHO: El Texto --- */
+.modal-derecha {
+    width: 60%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Si el texto es muy largo, hacemos scroll solo aquí */
+    position: relative;
+}
+
+/* Estilos de texto */
+.modal-derecha h2 {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    color: white;
+    line-height: 1.1;
+}
+
+.modal-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+
+.etiqueta-imdb {
+    background-color: #f5c518;
+    color: black;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.modal-info-extra {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin-bottom: 20px;
+    display: grid;
+    gap: 8px;
+}
+
+.modal-info-extra strong {
+    color: var(--rojo);
+}
+
+.sinopsis {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* Botón de cerrar flotante o abajo */
+.btn-cerrar {
+    margin-top: auto;
+    background-color:var(--rojo);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: 0.2s;
+}
+
+.btn-cerrar:hover {
+    background-color: var(--rojo);
+}
+
+/* MÓVIL */
+@media (max-width: 700px) {
+    .modal-contenido {
+        flex-direction: column;
+        height: auto;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    .modal-izquierda { 
+        width: 100%;
+        height: 200px;
+    }
+    .modal-derecha { 
+        width: 100%; 
+        padding: 20px; 
+    }
+}
