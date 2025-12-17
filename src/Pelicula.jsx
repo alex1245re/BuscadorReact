@@ -8,6 +8,7 @@ function Pelicula({titulo,year}){
     const [datos, setDatos] = useState([]);
     const [detalle, setDetalle] = useState(null);
     const [pagina,setPagina] = useState(1);
+    const [peliculaSeleccionada,setPeliculaSeleccionada] = useState(null);
 
     const errorImagen = (e) => {
         e.target.src = img_error;
