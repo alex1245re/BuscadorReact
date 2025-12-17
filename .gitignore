@@ -27,3 +27,4 @@ dist-ssr
 *.firebase
 .firebase/hosting.ZGlzdA.cache
 .firebaserc
+firebase.json
