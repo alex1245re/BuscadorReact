@@ -5,6 +5,7 @@ function PrincipalPage({onBuscarTitulo,onBuscarYear}) {
 
     return (
     <>
+        <h1>PLUSDEDE</h1>
         <div className="inputs">
             <div>
                 <input type="text" placeholder="Movie" onChange={(e)=>{onBuscarTitulo(e.target.value)}}/>

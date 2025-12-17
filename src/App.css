@@ -46,8 +46,8 @@ body {
     color: var(--rojo);
 }
 
-.hero-text h1 {
-font-size: 2.5rem;
+h1 {
+    font-size: 2.5rem;
     margin-bottom: 10px;
     text-transform: uppercase;
     background: linear-gradient(to bottom, #ffffff, #999999);
