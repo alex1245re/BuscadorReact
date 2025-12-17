@@ -76,7 +76,7 @@ function Pelicula({titulo,year}){
 
             {/*Ver mas*/}
             {datos.length > 0 && (
-                <div style={{textAlign: 'center', margin: '30px 0'}}>
+                <div>
                     <button 
                         className="btn-ver-mas"
                         onClick={() => setPagina(prev => prev + 1)}
